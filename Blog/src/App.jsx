@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { increment,decrement, incrementByValue } from './features/counter/counterSlice';
+import { increment, decrement, incrementByValue } from './features/counter/counterSlice';
+import Post from './components/post/post.component';
+import Form from './components/form/Form.component';
 const App = () => {
   const [value, setValue] = useState(0)
- 
   const count = useSelector((state) => {
-    
     return state.counter.value
   })
   const dispatch = useDispatch()
   return (
-     <div>
+    <div>
+      <Form/>
+      <Post/>
+      
       <div>
         <button
           aria-label="Increment value"
